@@ -9,15 +9,55 @@
   transition-duration: 500ms, 1s, 500ms, 1s;
   transition-timing-function: linear, ease-in-out, linear, linear;
   transition-delay: 1s, 0s, 1s, 0s;
-  transition: width 500ms linear 1s,
-  border-radius 1s ease-in-out 0s,
-  background-color 500ms linear 1s,
-  box-shadow 1s linear 0s;
+  transition:
+    width 500ms linear 1s,
+    border-radius 1s ease-in-out 0s,
+    background-color 500ms linear 1s,
+    box-shadow 1s linear 0s;
 }
 
 .transicion:hover {
-    width: 120px;
-    background-color: yellowgreen;
-    border-radius: 20px;
-    box-shadow: 0px 0px 5px 2px #262626;
+  width: 120px;
+  background-color: yellowgreen;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 2px #262626;
+}
+
+.circulo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  animation-name: recorrido;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes recorrido {
+  /* from {
+    left: 0px;
+  }
+  to {
+    left: calc(100vw - 30px);
+  } */
+  0% {
+    left: 0px;
+  }
+  50%{
+    background-color: blue;
+    top: 50vh;
+    box-shadow: 5px 0px 10px 5px #626262;
+  }
+  70%{
+    border-radius: 0px;
+  }
+  100% {
+    left: calc(100vw - 30px);
+  }
 }
