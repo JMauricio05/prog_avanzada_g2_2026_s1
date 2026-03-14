@@ -19,5 +19,12 @@ function sumar($val1, $val2){
         <input type="number" min="1" name="numero" required>
         <button type="submit">Validar</button>
     </form>
+    <br>
+    <form action="validar_numeros.php" method="post">
+        <label>Ingrese un número: </label>
+        <input type="number" min="2" name="numero" required>
+        <button type="submit">Enviar</button>
+    </form>
+
 </body>
 </html>
