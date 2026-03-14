@@ -16,6 +16,10 @@ $numero = $_POST['numero'];
 <body>
     <h1>Validar Número</h1>
     <?php
+    session_start();
+    if (!empty($_SESSION['nombre'])) {
+        echo "<p>Usuario: " . $_SESSION['nombre'] . "</p>";
+    }
     if (($numero % 2) == 0) {
         echo "<p>El número $numero es par</p>";
     } else {
