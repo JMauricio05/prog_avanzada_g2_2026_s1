@@ -32,6 +32,13 @@ class ConnectionDB
         return $stm->get_result();
     }
 
+    public function executeUpdataData($sql, $params)
+    {
+        $stm = $this->connDb->prepare($sql);
+        $stm->bind_param($params['type'], ...$params['datos']);
+        return $stm->execute();
+    }
+
     public function close()
     {
         $this->connDb->close();

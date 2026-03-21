@@ -2,11 +2,13 @@
 
 namespace app\models\entities;
 
-class Estudiante
+use app\models\config\ModelBase;
+
+class Estudiante extends ModelBase
 {
-    private $id = 0;
-    private $nombre = null;
-    private $email = null;
+    protected $id = 0;
+    protected $nombre = null;
+    protected $email = null;
 
     public function __construct($id, $nombre, $email)
     {
@@ -15,13 +17,5 @@ class Estudiante
         $this->email = $email;
     }
 
-    public function get($prop)
-    {
-        return $this->{$prop};
-    }
-
-    public function set($prop, $value)
-    {
-        $this->{$prop} = $value;
-    }
+   
 }

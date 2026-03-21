@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/../models/config/model_base.php';
 require __DIR__ . '/../models/entities/estudiante.php';
 require __DIR__ . '/../models/config/connection_db.php';
 require __DIR__ . '/../models/queries/estudiantes_query.php';
@@ -21,6 +22,7 @@ $lista = $controller->getListaEstudiantes();
 <body>
     <h1>Lista de estudiantes</h1>
     <br>
+    <a href="registro_estudiantes.php">Registrar estudiantes</a>
     <table>
         <thead>
             <tr>
