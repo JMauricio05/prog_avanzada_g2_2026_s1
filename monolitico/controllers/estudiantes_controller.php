@@ -36,4 +36,9 @@ class EstudiantesController
         $estado = EstudiantesQuery::updateEstudiante($estudiante);
         return $estado;
     }
+
+    public function borrarEstudiante($id){
+        $estado = EstudiantesQuery::deleteEstudiante($id);
+        return $estado;
+    }
 }

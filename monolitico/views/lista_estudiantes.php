@@ -44,7 +44,7 @@ $lista = $controller->getListaEstudiantes();
                     echo '  <td>' . $item->get('email') . '</td>';
                     echo '  <td>';
                     echo '      <a href="modificar_estudiante.php?cod=' . $item->get('id') . '">Modificar</a>';
-                    echo '      <a href="#">Eliminar</a>';
+                    echo '      <a href="borrar_estudiante.php?cod=' . $item->get('id') . '">Eliminar</a>';
                     echo '  </td>';
                     echo '</tr>';
                 }

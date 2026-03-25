@@ -58,4 +58,15 @@ class EstudiantesQuery
         $connDb->close();
         return $result;
     }
+
+    static function deleteEstudiante($id){
+        $sql = "DELETE FROM estudiantes where id=?";
+        $connDb = new ConnectionDB();
+        $result = $connDb->executeUpdataData($sql, [
+            "type" => "i",
+            "datos" => [$id]
+        ]);
+        $connDb->close();
+        return $result;
+    }
 }
