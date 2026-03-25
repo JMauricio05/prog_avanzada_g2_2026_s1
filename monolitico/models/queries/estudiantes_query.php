@@ -33,4 +33,29 @@ class EstudiantesQuery
         $connDb->close();
         return $result;
     }
+
+    static function findEstudiante($id)
+    {
+        $sql = "select * from estudiantes where id=$id";
+        $connDb = new ConnectionDB();
+        $result = $connDb->execute($sql);
+        $estudiante = null;
+        while ($row = $result->fetch_assoc()) {
+            $estudiante = new Estudiante($row['id'], $row['nombre'], $row['email']);
+            break;
+        }
+        $connDb->close();
+        return $estudiante;
+    }
+
+    static function updateEstudiante($entity){
+        $sql = "UPDATE estudiantes set nombre=?, email=? where id=?";
+        $connDb = new ConnectionDB();
+        $result = $connDb->executeUpdataData($sql, [
+            "type" => "ssi",
+            "datos" => [$entity->get('nombre'), $entity->get('email'), $entity->get('id')]
+        ]);
+        $connDb->close();
+        return $result;
+    }
 }

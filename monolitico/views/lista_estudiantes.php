@@ -3,7 +3,7 @@ require __DIR__ . '/../models/config/model_base.php';
 require __DIR__ . '/../models/entities/estudiante.php';
 require __DIR__ . '/../models/config/connection_db.php';
 require __DIR__ . '/../models/queries/estudiantes_query.php';
-require  __DIR__ . '/../controllers/estudiantes_controller.php';
+require __DIR__ . '/../controllers/estudiantes_controller.php';
 
 use app\controllers\EstudiantesController;
 
@@ -42,6 +42,10 @@ $lista = $controller->getListaEstudiantes();
                     echo '  <td>' . $item->get('id') . '</td>';
                     echo '  <td>' . $item->get('nombre') . '</td>';
                     echo '  <td>' . $item->get('email') . '</td>';
+                    echo '  <td>';
+                    echo '      <a href="modificar_estudiante.php?cod=' . $item->get('id') . '">Modificar</a>';
+                    echo '      <a href="#">Eliminar</a>';
+                    echo '  </td>';
                     echo '</tr>';
                 }
             }

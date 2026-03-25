@@ -3,12 +3,22 @@ require __DIR__ . '/../models/config/model_base.php';
 require __DIR__ . '/../models/entities/estudiante.php';
 require __DIR__ . '/../models/config/connection_db.php';
 require __DIR__ . '/../models/queries/estudiantes_query.php';
-require  __DIR__ . '/../controllers/estudiantes_controller.php';
+require __DIR__ . '/../controllers/estudiantes_controller.php';
 
 use app\controllers\EstudiantesController;
 
 $controller = new EstudiantesController();
-$estado = $controller->registrarEstudiante($_POST);
+// // $estado = $controller->registrarEstudiante($_POST);
+// // $estado = $controller->modificarEstudiante($_POST);
+// $estado = false;
+// if (empty($_POST['id'])) {
+//     $estado = $controller->registrarEstudiante($_POST);
+// } else {
+//     $estado = $controller->modificarEstudiante($_POST);
+// }
+$estado = empty($_POST['id']) 
+? $controller->registrarEstudiante($_POST) 
+: $controller->modificarEstudiante($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="es">
