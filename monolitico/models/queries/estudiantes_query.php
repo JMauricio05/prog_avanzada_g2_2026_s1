@@ -56,7 +56,6 @@ class EstudiantesQuery
             "datos" => [$entity->get('nombre'), $entity->get('email'), $entity->get('id')]
         ]);
         $connDb->close();
-        
         return $result;
     }
 }
