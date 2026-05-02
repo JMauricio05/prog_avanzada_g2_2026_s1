@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/general.css" />
+  </head>
+  <body>
+    <h1>Contactos</h1>
+    <section class="content">
+      <form name="contactoForm">
+        <h2>Guardar contacto</h2>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono">
+        </div>
+        <div class="buttons">
+            <button type="reset">Cancelar</button>
+            <button type="submit">Guardar</button>
+        </div>
+      </form>
+      <table id="contactosTB">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3">No hay registros..</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <script src="js/contactos.js"></script>
+    <script src="js/contacto_form.js"></script>
+  </body>
+</html>

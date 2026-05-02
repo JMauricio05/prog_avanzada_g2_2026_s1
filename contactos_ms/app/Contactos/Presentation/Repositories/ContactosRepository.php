@@ -25,7 +25,9 @@ class ContactosRepository
         $controller = new ContactosController();
         $contacto = $controller->guardarContacto($data);
         $response->getBody()->write($contacto);
-        return $response->withHeader("Content-Type", "application/json");
+        return $response
+            ->withStatus(201)
+            ->withHeader("Content-Type", "application/json");
     }
 
     function detail(Request $req, Response $resp, $args)

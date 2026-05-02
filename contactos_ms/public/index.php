@@ -4,9 +4,12 @@ use Slim\Factory\AppFactory;
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ .'/../app/Config/database.php';
 
-$endpoints = require __DIR__ . '/../app/contactos/Presentation/Routers/endpoints.php';
+$cors = require __DIR__ . '/../app/Middlewares/CorsMiddleware.php';
+$endpoints = require __DIR__ . '/../app/Contactos/Presentation/Routers/endpoints.php';
 
 $app = AppFactory::create();
+
+$cors($app);
 
 $endpoints($app);
 
