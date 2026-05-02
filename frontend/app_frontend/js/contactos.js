@@ -1,5 +1,6 @@
 /* definici+on de varaiables*/
 const contactos = [];
+let contacto = null;
 const contactosTabla = document.getElementById("contactosTB");
 
 /* definici+on de métodos o funciones*/
@@ -23,7 +24,12 @@ const mostrarContactos = () => {
     eliminarBtn.textContent = "Borrar";
     eliminarBtn.addEventListener("click", () => borrarContacto(item.id));
 
+    const modificarBtn = document.createElement("button");
+    modificarBtn.textContent = "Editar";
+    modificarBtn.addEventListener("click", () => editarContacto(item));
+
     accionesTd.appendChild(eliminarBtn);
+    accionesTd.appendChild(modificarBtn);
 
     tr.appendChild(nombreTd);
     tr.appendChild(emailTd);
@@ -89,6 +95,11 @@ const consultarContacto = async () => {
   }
   console.log("Fin del request...");
 };
+
+const editarContacto = (value)=>{
+    contacto = value;
+    setContactoForm(contacto);
+}
 
 /* definici+on de eventos*/
 /* llamado de funciones por defecto*/
