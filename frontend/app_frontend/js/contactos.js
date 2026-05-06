@@ -47,7 +47,8 @@ const borrarContacto = async (id) => {
     });
     const status = response.status;
     if (status == 200) {
-      alert("Datos borrador");
+      //alert("Datos borrador");
+      showModal("Datos borrados");
       consultarContacto();
     }
   } catch (ex) {

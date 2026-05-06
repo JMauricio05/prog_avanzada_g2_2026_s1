@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/modal.css" />
   </head>
   <body>
     <h1>Contactos</h1>
@@ -14,6 +15,7 @@
         <div>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre">
+            <p id="msgInputNombre" class="inputError">Campo obligatorio</p>
         </div>
         <div>
             <label for="email">Email:</label>
@@ -43,6 +45,11 @@
         </tbody>
       </table>
     </section>
+    <div id="modal1" class="modal close">
+      <p class="modal__texto">Datos guardados</p>
+      <button class="modal__btn">Aceptar</button>
+    </div>
+    <script src="js/modal.js"></script>
     <script src="js/contactos.js"></script>
     <script src="js/contacto_form.js"></script>
   </body>

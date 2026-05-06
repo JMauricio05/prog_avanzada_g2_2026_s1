@@ -29,7 +29,8 @@ const registrarContacto = async () => {
     const body = await response.json();
     const status = response.status;
     if (status == 201) {
-      alert("Datos guardados");
+      //alert("Datos guardados");
+      showModal("Datos guardados");
       contactos.push({
         id: body.id,
         nombre: body.nombre,
@@ -58,7 +59,8 @@ const actualizarContacto = async () => {
     const body = await response.json();
     const status = response.status;
     if (status == 200) {
-      alert("Datos guardados");
+      //alert("Datos guardados");
+      showModal("Datos guardados");
       consultarContacto();
       contacto = null;
       contactoForm.reset();
@@ -69,14 +71,34 @@ const actualizarContacto = async () => {
   console.log("Fin del request...");
 };
 
+const validarInputs = (contactoForm) => {
+  const msgInputNombre = document.getElementById('msgInputNombre');
+  if (!contactoForm.nombre) {
+    msgInputNombre.style.display = 'block';
+  } else {
+    msgInputNombre.style.display = 'none';
+  }
+}
+
 /* definici+on de eventos*/
 contactoForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  contacto ? actualizarContacto() : registrarContacto();
+  const contactoForm = getContactoForm();
+  validarInputs(contactoForm);
+  if (!contactoForm.nombre || !contactoForm.email || !contactoForm.telefono) {
+    showModal("Todos los campos son obligatorios", 'error');
+  } else {
+    contacto ? actualizarContacto() : registrarContacto();
+  }
 });
 
 contactoForm.addEventListener("reset", (event) => {
   contacto = null;
+});
+
+contactoForm["nombre"].addEventListener("keyup", () => {
+  const contactoForm = getContactoForm();
+  validarInputs(contactoForm);
 });
 
 /* llamado de funciones por defecto*/
