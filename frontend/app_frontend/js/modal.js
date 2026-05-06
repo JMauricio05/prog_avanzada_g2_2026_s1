@@ -16,6 +16,6 @@ const hideModal = () => {
     modal1.classList.add('close');
 }
 
-modal1.addEventListener('click', ()=>{
+modal1.getElementsByTagName('button')[0].addEventListener('click', ()=>{
     hideModal();
 });
